@@ -63,7 +63,8 @@ class PickerNB extends Component {
   prepareRootProps() {
     const defaultProps = {
       style: this.getInitialStyle().picker,
-      itemStyle: this.getInitialStyle().pickerItem
+      itemStyle: this.getInitialStyle().pickerItem,
+      itemDisabledStyle: this.getInitialStyle().pickerItem
     };
 
     return computeProps(this.props, defaultProps);
@@ -204,11 +205,11 @@ class PickerNB extends Component {
                 <ListItem
                   selected={item.props.value === this.props.selectedValue}
                   button
-                  style={this.props.itemStyle}
+                  style={((item.props.disabled != undefined) && (item.props.disabled == true))? this.props.itemDisabledStyle : this.props.itemStyle}
                   onPress={() => {
                     //Bharat: ignore click on disabled
                     if ((item.props.disabled != undefined) && (item.props.disabled == true)) {
-                      console.log('Ignoring disabled item='+item.props.value);
+                      // console.log('Ignoring disabled item='+item.props.value);
                       return;
                     }
                     this._setModalVisible(false);
