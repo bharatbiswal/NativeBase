@@ -27,6 +27,7 @@ declare module "native-base" {
 			note?: boolean;
 			placeholderIconColor?: string;
 			itemTextStyle?: ReactNative.TextStyle;
+			itemDisabledTextStyle?: ReactNative.TextStyle;
 			headerStyle?: ReactNative.ViewStyle;
 			headerTitleStyle?: ReactNative.TextStyle;
 			headerBackButtonTextStyle?: ReactNative.TextStyle;

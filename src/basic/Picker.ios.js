@@ -218,7 +218,7 @@ class PickerNB extends Component {
                   }}
                 >
                   <Left>
-                    <Text style={this.props.itemTextStyle}>
+                    <Text style={((item.props.disabled != undefined) && (item.props.disabled == true))? this.props.itemDisabledTextStyle : this.props.itemTextStyle}>
                       {item.props.label}
                     </Text>
                   </Left>
