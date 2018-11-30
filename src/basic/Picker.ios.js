@@ -201,10 +201,8 @@ class PickerNB extends Component {
             <FlatList
               data={this.state.dataSource}
               keyExtractor={(item, index) => String(index)}
-              renderItem={({ item }) => {
-                if ((item.props.placeholder == undefined) || (item.props.placeholder == false)) {
-                  return (
-                    <ListItem
+              renderItem={({ item }) => (
+                <ListItem
                   selected={item.props.value === this.props.selectedValue}
                   button
                   style={((item.props.disabled != undefined) && (item.props.disabled == true))? this.props.itemDisabledStyle : this.props.itemStyle}
@@ -232,11 +230,7 @@ class PickerNB extends Component {
                       )}
                   </Right>
                 </ListItem>
-                  );
-                } else {
-                  return (<View></View>);
-                }
-            }}
+              )}
             />
           </Container>
         </Modal>
