@@ -206,6 +206,11 @@ class PickerNB extends Component {
                   button
                   style={this.props.itemStyle}
                   onPress={() => {
+                    //Bharat: ignore click on disabled
+                    if ((item.props.disabled != undefined) && (item.props.disabled == true)) {
+                      console.log('Ignoring disabled item='+item.props.value);
+                      return;
+                    }
                     this._setModalVisible(false);
                     this.props.onValueChange(item.props.value);
                     this.setState({ current: item.props.label });
